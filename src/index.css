@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif&display=swap');
 header {
-  padding: 10px;
+  padding:60px;
 }
 header>.title {
   font-family: 'Roboto', sans-serif;
@@ -57,9 +57,14 @@ header > .sub-title {
 }
 
 .card {
-  margin: 40px;
+  margin: 80px;
   position: relative;
   display: inline-block;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.card:hover {
+  transform: scale(1.2,1.2);
 }
 .img {
   width: 512px;
@@ -76,29 +81,44 @@ header > .sub-title {
   position: absolute;
   margin: 0 auto;
   right: 2%;
-  top: 0%;
+  bottom: 0%;
   text-align: center;
   color: rgb(233, 227, 227);
 }
 
 .ruby-tag {
+  display: inline-block;
   border-radius: 12px;
   margin-left: 15px;
-  height: 20px;
-  width: 45px;
-  padding: 3px;
+  padding: 5px;
   background-color: rgb(243, 102, 102);
   padding-top: 5px;
   font-size: 13px;
   font-family: 'Noto Serif', serif;
-}
-.tag {
   transition: all 0.4s ease-in-out 0s;
   box-shadow: #be3b3b 1px 2px;
 }
 
-.tag:hover {
+.ruby-tag:hover {
   box-shadow: #6b0d0d 1px 2px;
+  color: white;
+}
+
+.javascript-tag {
+  display: inline-block;
+  border-radius: 12px;
+  margin-left: 15px;
+  padding: 5px;
+  background-color: rgb(108, 182, 79);
+  padding-top: 5px;
+  font-size: 13px;
+  font-family: 'Noto Serif', serif;
+  transition: all 0.4s ease-in-out 0s;
+  box-shadow: #296e20 1px 2px;
+}
+
+.javascript-tag:hover {
+  box-shadow: #064619 1px 2px;
   color: white;
 }
 .test {
