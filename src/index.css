@@ -27,7 +27,7 @@
 
 #home-header {
   background-color: #F6F6F6;
-  height: 90vh;
+  height: 95vh;
 }
 
 .links-container > * {
@@ -66,16 +66,15 @@
 }
 
 .card {
-  margin: 80px;
+  margin: 20px;
   position: relative;
   display: inline-block;
   transition: all 0.4s ease-in-out 0s;
-  padding: 10px;
-  background: #717171;
+  padding: 0px;
 }
 
 .card:hover {
-  transform: scale(1.2,1.2);
+  transform: scale(1.1,1.1);
 }
 .img {
   width: 512px;
@@ -86,6 +85,12 @@
 
 .img:hover {
   filter: contrast(1);
+}
+
+.medium-img {
+  width: 512px;
+  height: 288px;
+  margin-top: 18px;
 }
 
 .card .tags{
@@ -142,14 +147,62 @@
   height: 80vh;
 }
 
-#home-projects > h1{
+#top-projects> h1{
   font-family: 'Roboto', sans-serif;
   font-size: 35px;
   margin: 0px;
   padding-top: 10px;
-  color: rgb(3, 133, 177);
+  color: rgb(25, 41, 46);
 }
 
+#top-projects {
+  position: relative;
+  background: rgb(192, 192, 192);
+  top: -3em;
+  width: 70vw;
+  margin: 0 auto;
+  padding-top: 0.5em;
+  padding-bottom: 2.5em;
+  box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+.left-item {
+  margin-right: 15px;
+}
+.right-item {
+  margin-left: 15px;
+}
+.project {
+  margin-top: 3em;
+  margin-left: 11em;
+}
+.project-text {
+  width: 20vw;
+  text-align: justify;
+}
+.project-title {
+  font-family: 'Roboto', sans-serif;
+}
+.project-desc {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.clearfix {
+  overflow: auto;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 body {
   background-color: #20303f;
   margin: 0px;
