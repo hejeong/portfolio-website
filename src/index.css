@@ -1,29 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif&display=swap');
-header {
-  padding:60px;
+#home-header {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("https://blog.hyperiondev.com/wp-content/uploads/2018/01/Web-Developer-vs-Software-Developer.jpg");
+  background-size: cover;
 }
-header>.title {
+#header-content{
+  text-align: center;
+  padding-top: 35vh;
+}
+#header-content>.title {
   font-family: 'Roboto', sans-serif;
   margin-top: 0px;
   margin-bottom: -3px;
-  color: #525253;
+  color: #d4a142;
+  font-size: 60px;
 }
 
-header > .sub-title {
+#header-content > .sub-title {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  color: #525253;
+  font-size: 25px;
+  color: #d4a142;
   margin-top: 0px;
   margin-bottom: 20px;
 }
 
-.app-header {
+#home-header {
   background-color: #F6F6F6;
+  height: 90vh;
 }
 
 .links-container > * {
   display: inline;
+  font-size: 25px;
 }
 .links-container > a {
   text-decoration: none;
@@ -40,15 +49,15 @@ header > .sub-title {
   height: 0.5px;
   bottom: 0;
   left: 0;
-  background-color: rgba(12, 9, 9, 0.486);
+  background-color: rgb(231, 209, 112);
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.4s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 .links-container> a:hover {
-  color: rgba(12, 9, 9, 0.486);
+  color: rgb(231, 209, 112);
 }
 .links-container> a:hover:before {
   visibility: visible;
@@ -61,6 +70,8 @@ header > .sub-title {
   position: relative;
   display: inline-block;
   transition: all 0.4s ease-in-out 0s;
+  padding: 10px;
+  background: #717171;
 }
 
 .card:hover {
@@ -117,21 +128,30 @@ header > .sub-title {
   box-shadow: #296e20 1px 2px;
 }
 
+.text-divider {
+  color: white;
+}
 .javascript-tag:hover {
   box-shadow: #064619 1px 2px;
   color: white;
 }
-.test {
-  font-family: 'Noto Serif', serif;
+
+#home-projects {
+  background-color: #012835;
+  text-align: center;
+  height: 80vh;
 }
 
-.test2{
-  height: 100%;
-  background-color: #B2B2B2;
+#home-projects > h1{
+  font-family: 'Roboto', sans-serif;
+  font-size: 35px;
+  margin: 0px;
+  padding-top: 10px;
+  color: rgb(3, 133, 177);
 }
 
 body {
-  background-color: #B2B2B2;
+  background-color: #20303f;
   margin: 0px;
 }
 
