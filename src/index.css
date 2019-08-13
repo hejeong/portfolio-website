@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif&display=swap');
-#home-header {
+#home-header, #about {
   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("https://blog.hyperiondev.com/wp-content/uploads/2018/01/Web-Developer-vs-Software-Developer.jpg");
   background-size: cover;
 }
@@ -217,6 +217,60 @@
 #footer {
   background-color: rgb(27, 23, 23);
   height: 20vh;
+}
+
+#about {
+  height: 100vh;
+}
+
+.navbar {
+  color: rgba(194, 194, 194, 0.781);
+  height: 7vh;
+  background-color: rgb(15, 12, 12);
+}
+.navlink {
+  text-decoration: none;
+}
+
+.navlink:visited{
+  color: rgba(194, 194, 194, 0.781);
+}
+
+.navlink:hover {
+  color: rgb(240, 198, 142);
+}
+
+#about-info {
+  margin: 0 auto;
+  margin-top: 8vh;
+  padding-top: 12vh;
+  padding-left: 8vw;
+  height: 60vh;
+  width: 70vw;
+  background-color: rgb(153, 166, 177);
+}
+.profile-pic {
+  width: 360px;
+  height: 480px;
+  filter: contrast(0.8);
+  border-radius: 50%;
+  margin-right: 8vw;
+}
+.profile-desc{
+  font-size: 40px;
+  margin: 0px;
+  color: rgb(16, 48, 85);
+}
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.profile-title {
+  color: black;
+}
+.thin-roboto{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 body {
  

@@ -15,7 +15,7 @@ const Home = () => {
                 <p className="text-divider">  |  </p>
                 <a href="#">FoodVentures</a>
                 <p className="text-divider">   |  </p>
-                <a href="#">About</a>
+                <a href="/about">About</a>
                 </div>
             </div>
         </section>
