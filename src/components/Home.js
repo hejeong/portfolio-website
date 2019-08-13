@@ -40,7 +40,9 @@ const Home = () => {
             </div>
         </section>
         <section id="home-food">
-       
+            <p className="roboto">Food Gallery</p>
+            <img src={ Bento } alt="bento box" className="food-img"/>
+
         </section>
         <section id="footer">
             Contact

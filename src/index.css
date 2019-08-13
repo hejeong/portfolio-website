@@ -94,8 +94,8 @@
 }
 
 .food-img {
-  width: 480px;
-  height: 360px;
+  width: 960px;
+  height: 720px;
   filter: contrast(0.8);
 }
 
@@ -166,11 +166,13 @@
   background: rgb(192, 192, 192);
   top: -3em;
   width: 70vw;
+  height: 80vh;
   margin: 0 auto;
   padding-top: 0.5em;
   padding-bottom: 5em;
   box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
 }
+
 
 .float-left {
   float: left;
@@ -184,6 +186,10 @@
 }
 .right-item {
   margin-left: 15px;
+}
+
+.section-title {
+  color: #d4a142da;
 }
 .project {
   margin-top: 3em;
@@ -212,7 +218,14 @@
 
 #home-food {
   background-color: #20303f;
-  height: 60vh;
+  height: 80vh;
+  padding-top: 10vh;
+  text-align: center;
+}
+#home-food > p {
+  font-size: 40px;
+  margin: 40px 0;
+  color: #d4a142da;
 }
 #footer {
   background-color: rgb(27, 23, 23);
@@ -244,10 +257,15 @@
   margin: 0 auto;
   margin-top: 8vh;
   padding-top: 12vh;
-  padding-left: 8vw;
+  padding-left: 10vw;
   height: 60vh;
   width: 70vw;
   background-color: rgb(153, 166, 177);
+}
+.profile-text {
+  float: left;
+  width: 30vw;
+  margin-right: 7vw;
 }
 .profile-pic {
   width: 360px;
@@ -257,7 +275,7 @@
   margin-right: 8vw;
 }
 .profile-desc{
-  font-size: 40px;
+  font-size: 25px;
   margin: 0px;
   color: rgb(16, 48, 85);
 }
@@ -267,6 +285,8 @@
 
 .profile-title {
   color: black;
+  font-size: 40px;
+  margin-top: 0px;
 }
 .thin-roboto{
   font-family: 'Roboto', sans-serif;
