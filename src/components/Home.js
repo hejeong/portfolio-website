@@ -1,6 +1,7 @@
 import React from 'react';
 import SinatraTextbooks from '../assets/sinatra-college-textbooks.png';
 import RunnersWeekly from '../assets/runners-weekly.png';
+import Bento from '../assets/bento.jpg';
 const Home = () => {
     return  <div>
         <section id="home-header">
@@ -10,9 +11,11 @@ const Home = () => {
                 <div className="links-container">
                 <a href="/projects" >Projects</a>
                 <p className="text-divider">  |  </p>
-                <a href="#">Blog</a>  
+                <a href="#">Blog</a>
+                <p className="text-divider">  |  </p>
+                <a href="#">FoodVentures</a>
                 <p className="text-divider">   |  </p>
-                <a href="#">Contact</a>
+                <a href="#">About</a>
                 </div>
             </div>
         </section>
@@ -35,6 +38,12 @@ const Home = () => {
                 </div>
                
             </div>
+        </section>
+        <section id="home-food">
+       
+        </section>
+        <section id="footer">
+            Contact
         </section>
   </div>
 }

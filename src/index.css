@@ -12,7 +12,7 @@
   font-family: 'Roboto', sans-serif;
   margin-top: 0px;
   margin-bottom: -3px;
-  color: #d4a142;
+  color: #d4a142da;
   font-size: 60px;
 }
 
@@ -20,7 +20,7 @@
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 25px;
-  color: #d4a142;
+  color: #eed097;
   margin-top: 0px;
   margin-bottom: 20px;
 }
@@ -93,6 +93,12 @@
   margin-top: 18px;
 }
 
+.food-img {
+  width: 480px;
+  height: 360px;
+  filter: contrast(0.8);
+}
+
 .card .tags{
   position: absolute;
   margin: 0 auto;
@@ -134,7 +140,7 @@
 }
 
 .text-divider {
-  color: white;
+  color: rgb(182, 182, 182);
 }
 .javascript-tag:hover {
   box-shadow: #064619 1px 2px;
@@ -142,7 +148,7 @@
 }
 
 #home-projects {
-  background-color: #012835;
+  background-color: #141f29;
   text-align: center;
   height: 80vh;
 }
@@ -162,7 +168,7 @@
   width: 70vw;
   margin: 0 auto;
   padding-top: 0.5em;
-  padding-bottom: 2.5em;
+  padding-bottom: 5em;
   box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
 }
 
@@ -203,8 +209,17 @@
   clear: both;
   display: table;
 }
-body {
+
+#home-food {
   background-color: #20303f;
+  height: 60vh;
+}
+#footer {
+  background-color: rgb(27, 23, 23);
+  height: 20vh;
+}
+body {
+ 
   margin: 0px;
 }
 
