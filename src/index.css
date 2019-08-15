@@ -218,8 +218,8 @@
 
 #home-food {
   background-color: #20303f;
-  height: 80vh;
-  padding-top: 10vh;
+  height: 90vh;
+  padding: 10vh 0;
   text-align: center;
 }
 #home-food > p {

@@ -5,6 +5,7 @@ class ProjectsContainer extends Component {
     render() {
         return(
             <div>
+                <a href="/projects/new">New Project</a>
                 <ProjectsList />
             </div>
         )

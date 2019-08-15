@@ -9,13 +9,13 @@ const Home = () => {
                 <h1 className="title">Jonathan Hong</h1>
                 <h4 className="sub-title">Full Stack Web Developer</h4>
                 <div className="links-container">
-                <a href="/projects" >Projects</a>
-                <p className="text-divider">  |  </p>
-                <a href="#">Blog</a>
-                <p className="text-divider">  |  </p>
-                <a href="#">FoodVentures</a>
-                <p className="text-divider">   |  </p>
-                <a href="/about">About</a>
+                    <a href="/projects" >Projects</a>
+                    <p className="text-divider">  |  </p>
+                    <a href="#">Blog</a>
+                    <p className="text-divider">  |  </p>
+                    <a href="#">FoodVentures</a>
+                    <p className="text-divider">   |  </p>
+                    <a href="/about">About</a>
                 </div>
             </div>
         </section>
@@ -40,9 +40,6 @@ const Home = () => {
             </div>
         </section>
         <section id="home-food">
-            <p className="roboto">Food Gallery</p>
-            <img src={ Bento } alt="bento box" className="food-img"/>
-
         </section>
         <section id="footer">
             Contact
