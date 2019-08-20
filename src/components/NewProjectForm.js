@@ -1,50 +1,44 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { updateProjectForm, createProject } from '../actions/project.js';
+import ActiveStorageProvider from 'react-activestorage-provider'
 
-class NewProjectForm extends Component {
-    constructor(){
-        super()
-        this.state={
-            title: "",
-            description: "",
-            content: "",
-            cover_image: ""
+const NewProjectForm = ({projectForm, updateProjectForm, createProject}) => {
+  
+    const handleInputChange = (event) => {
+        const {name, value} = event.target
+        const updateFormData = {
+            ...projectForm,
+            [name]: value
         }
-    }
-    handleOnSubmit = (event) => {
-        event.preventDefault();
-        fetch(`http://localhost:8000/api/projects/`, {
-            method: 'POST',
-            headers: {
-                "Content-Type": 'application/json'
-            },
-            body: JSON.stringify({
-                project: {...this.state}
-            })
-        })
+        updateProjectForm(updateFormData)
     }
 
-    handleOnChange = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
+    const handleSubmit = event => {
+        event.preventDefault()
+        createProject({...projectForm})
     }
-    render(){
-        return(<div>
-            <form onSubmit={this.handleOnSubmit}>
+
+    return(<div>
+            <form onSubmit={handleSubmit}>
                 <h4>Add a new project</h4>
                 <label>Title: </label>
-                <input type="text" name="title" onChange={this.handleOnChange}/>
+                <input type="text" name="title" value={projectForm.title} onChange={handleInputChange}/>
                 <label>Description: </label>
-                <input type="text" name="description" onChange={this.handleOnChange}/>
+                <input type="text" name="description" value={projectForm.description} onChange={handleInputChange}/>
                 <label>Content: </label>
-                <input type="textarea" name="content" onChange={this.handleOnChange}/>
+                <input type="textarea" name="content" value={projectForm.content} onChange={handleInputChange}/>
                 <label>Thumbnail: </label>
-                <input type="file" name="image" onChange={this.handleOnChange}/>
-                <input type="submit" value="submit" />
-                
+                <input type="submit" value="submit" />              
             </form>
-        </div>)
+    </div>)
+     
+}
+
+const mapStateToProps = (state) => {
+    return { 
+        projectForm: state.projectsReducer,
     }
 }
 
-export default NewProjectForm;
+export default connect(mapStateToProps, {updateProjectForm, createProject})(NewProjectForm);
