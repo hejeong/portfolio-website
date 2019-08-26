@@ -14,6 +14,14 @@ const NewProjectForm = ({projectForm, updateProjectForm, createProject}) => {
         updateProjectForm(updateFormData)
     }
 
+    const handleFile = event => {
+        const file = event.target.files[0]
+        const updateFormData = {
+            ...projectForm,
+            cover_image: file
+        }
+        updateProjectForm(updateFormData)
+    }
     const handleSubmit = event => {
         event.preventDefault()
         createProject({...projectForm})
@@ -29,6 +37,7 @@ const NewProjectForm = ({projectForm, updateProjectForm, createProject}) => {
                 <label>Content: </label>
                 <input type="textarea" name="content" value={projectForm.content} onChange={handleInputChange}/>
                 <label>Thumbnail: </label>
+                <input type="file" onChange={handleFile} />
                 <input type="submit" value="submit" />              
             </form>
     </div>)

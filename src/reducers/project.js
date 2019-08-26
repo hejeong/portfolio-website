@@ -2,6 +2,7 @@ const initialState = {
     title: "",
     description: "",
     content: "",
+    cover_image: null
 }
 
 export default (state=initialState, action) => {
