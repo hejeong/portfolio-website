@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import About from './components/About';
 import NewProjectForm from './components/NewProjectForm';
+import NewBlogPostForm from './components/NewBlogPostForm';
 import Project from './components/Project';
 import ProjectsContainer from './containers/ProjectsContainer';
 import Home from './components/Home';
@@ -14,6 +15,7 @@ function App() {
       <body>
       <Router>
         <Route exact path='/' component={ Home } />
+        <Route exact path='/blogs/new' component={NewBlogPostForm} />
         <Route exact path='/projects/new' component={ NewProjectForm } />
         <Route exact path='/projects/:id' component={Project} />
         <Route exact path='/projects' component={ ProjectsContainer } />
