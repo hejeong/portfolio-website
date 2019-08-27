@@ -12,8 +12,6 @@ const Home = () => {
                     <a href="/projects" >Projects</a>
                     <p className="text-divider">  |  </p>
                     <a href="/blogs/">Blog</a>
-                    <p className="text-divider">  |  </p>
-                    <a href="#">FoodVentures</a>
                     <p className="text-divider">   |  </p>
                     <a href="/about">About</a>
                 </div>
