@@ -333,6 +333,11 @@
   margin: 0 auto;
   width: 60%;
 }
+
+.markdown-html {
+  width: 70%;
+  margin: 0 auto;
+}
 body {
  
   margin: 0px;

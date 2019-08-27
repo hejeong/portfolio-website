@@ -18,6 +18,19 @@ export const receiveBlogData = (blogData) => {
     }
 }
 
+export const getSpecificBlog = (postID) => {
+    return {
+        type: "GET_SPECIFIC_BLOG",
+        postID
+    }
+}
+
+export const resetTargetBlog= () => {
+    return {
+        type: "RESET_TARGET"
+    }
+}
+
 export const fetchBlogData = () => {
     return dispatch => { 
         dispatch(requestBlogData())

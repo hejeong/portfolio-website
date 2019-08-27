@@ -6,9 +6,10 @@ import NewBlogPostForm from './components/NewBlogPostForm';
 import BlogsContainer from './containers/BlogsContainer';
 import Project from './components/Project';
 import ProjectsContainer from './containers/ProjectsContainer';
+import BlogPost from './components/BlogPost';
 import {fetchBlogData} from './actions/blog';
 import Home from './components/Home';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { Switch, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 class App extends Component {
@@ -18,17 +19,16 @@ class App extends Component {
   render(){
       return (
       <div className="App">
-        <body>
-        <Router>
+        <Switch >
           <Route exact path='/' component={ Home } />
           <Route exact path='/blog/new' component={NewBlogPostForm} />
+          <Route exact path='/blog/:id' component={ BlogPost } />
           <Route exact path="/blogs" component={BlogsContainer} />
           <Route exact path='/projects/new' component={ NewProjectForm } />
           <Route exact path='/projects/:id' component={Project} />
           <Route exact path='/projects' component={ ProjectsContainer } />
           <Route exact path='/about' component={ About } />
-        </Router>
-        </body>
+        </Switch>
       </div>
     );
   }
