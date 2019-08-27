@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import SimpleMDE from 'simplemde/dist/simplemde.min.js'
 import 'simplemde/dist/simplemde.min.css'
-import { updateBlogPostForm } from '../actions/blog.js';
+import { updateBlogPostForm, publishPost } from '../actions/blog.js';
 import { connect } from 'react-redux';
 class NewBlogPostForm extends Component {
 
@@ -23,6 +23,11 @@ class NewBlogPostForm extends Component {
             [name]: value
         }
         this.props.updateBlogPostForm(updateFormData)
+    }
+
+    handleOnSubmit = (event) => {
+        event.preventDefault();
+        publishPost(...this.props.blogPostForm)
     }
 
     render(){
