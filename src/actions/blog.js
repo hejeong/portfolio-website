@@ -5,6 +5,31 @@ export const updateBlogPostForm = formData => {
     }
 }
 
+export const requestBlogData = () => {
+    return {
+        type: "REQUEST_BLOG_DATA"
+    }
+}
+
+export const receiveBlogData = (blogData) => {
+    return {
+        type: "RECEIVE_BLOG_DATA",
+        data: blogData
+    }
+}
+
+export const fetchBlogData = () => {
+    return dispatch => { 
+        dispatch(requestBlogData())
+       return fetch('http://localhost:8000/api/blogs')
+       .then(resp => resp.json())
+       .then(data => {
+           dispatch(receiveBlogData(data))
+       })
+       .catch(error => console.log(error));
+    }
+}
+
 export const publishPost = postData => {
     return dispatch => {
         let data = new FormData();

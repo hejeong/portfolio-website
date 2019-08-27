@@ -6,11 +6,15 @@ import NewBlogPostForm from './components/NewBlogPostForm';
 import BlogsContainer from './containers/BlogsContainer';
 import Project from './components/Project';
 import ProjectsContainer from './containers/ProjectsContainer';
+import {fetchBlogData} from './actions/blog';
 import Home from './components/Home';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
-
+import {connect} from 'react-redux';
 
 class App extends Component {
+  componentDidMount(){
+    this.props.fetchBlogData()
+  }
   render(){
       return (
       <div className="App">
@@ -30,4 +34,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(null, { fetchBlogData })(App);

@@ -27,12 +27,12 @@ class NewBlogPostForm extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault();
-        publishPost(...this.props.blogPostForm)
+        this.props.publishPost(this.props.blogPostForm)
     }
 
     render(){
         return(
-        <form className="blog-form">
+        <form className="blog-form" onSubmit={this.handleOnSubmit}>
             <h1 className="new-blog-label">Create new Blog Post</h1>
             <input type="text" name="title" placeholder="Title" className="blog-title roboto" onChange={this.handleInputChange}/> <br/>
             <input type="text" name="description" placeholder="Description" className="blog-description thin-roboto" onChange={this.handleInputChange} />
@@ -49,4 +49,4 @@ const mapStateToProps = (state) => {
         blogPostForm: state.blogPostsReducer,
     }
 }
-export default connect(mapStateToProps, {updateBlogPostForm})(NewBlogPostForm);
+export default connect(mapStateToProps, {updateBlogPostForm, publishPost})(NewBlogPostForm);
