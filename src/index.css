@@ -10,6 +10,12 @@
   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("https://blog.hyperiondev.com/wp-content/uploads/2018/01/Web-Developer-vs-Software-Developer.jpg");
   background-size: cover;
 }
+
+#projects-container {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.76) ), url("https://cdn.wallpapersafari.com/6/18/ePgpAh.png");
+  background-size: cover;
+  height: 100vh;
+}
 #header-content{
   text-align: center;
   padding-top: 35vh;
@@ -81,6 +87,28 @@
 
 .card:hover {
   transform: scale(1.1,1.1);
+}
+
+.card-text {
+  margin-top: -3px;
+  background: white;
+  padding: 15px;
+  width: 512px;
+}
+.card-text:visited {
+  text-decoration: none;
+  color: black;
+}
+.project-description {
+  margin: 0px;
+}
+
+.project-list-item {
+  list-style: none;
+}
+
+.project-list-item > a {
+  color: black;
 }
 .img {
   width: 512px;
@@ -338,6 +366,8 @@
   width: 70%;
   margin: 0 auto;
 }
+
+
 body {
  
   margin: 0px;

@@ -8,6 +8,7 @@ import Project from './components/Project';
 import ProjectsContainer from './containers/ProjectsContainer';
 import BlogPost from './components/BlogPost';
 import {fetchBlogData} from './actions/blog';
+import {fetchProjectIndex} from './actions/project';
 import Home from './components/Home';
 import { Switch, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
@@ -15,6 +16,7 @@ import {connect} from 'react-redux';
 class App extends Component {
   componentDidMount(){
     this.props.fetchBlogData()
+    this.props.fetchProjectIndex()
   }
   render(){
       return (
@@ -34,4 +36,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, { fetchBlogData })(App);
+export default connect(null, { fetchBlogData, fetchProjectIndex })(App);

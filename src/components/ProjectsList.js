@@ -1,24 +1,14 @@
 import React from 'react';
-import SinatraTextbooks from '../assets/sinatra-college-textbooks.png';
-import RunnersWeekly from '../assets/runners-weekly.png';
-
+import {Link} from 'react-router-dom';
 import ProjectCard from './ProjectCard.js';
-const ProjectsList = () => {
-    return <div>
-       <div className="card">
-        <img src={ SinatraTextbooks } alt="college-textbooks-sinatra" className="img"/>
-        <div className="tags">
-            <p className="ruby-tag tag">Ruby Sinatra</p>
-        </div>
-    </div>
-    <div className="card">
-        <img src={ RunnersWeekly } alt="runners-weekly" className="img"/>
-        <div className="tags">
-            <p className="ruby-tag tag">Ruby on Rails</p>
-            <p className="javascript-tag tag">React/Redux</p>
-        </div>
-    </div>
-    </div>
+const ProjectsList = ({projects}) => {
+    return projects.map(project=>{
+        return <li className="project-list-item" key={project.id}>
+            <Link to={'/project/'+project.id}>
+                <ProjectCard project={project} />
+            </Link>
+        </li>
+    })
 }
 
 export default ProjectsList;

@@ -5,6 +5,31 @@ export const updateProjectForm = formData => {
     }
 }
 
+
+export const requestProjectData = () => {
+    return {
+        type: "REQUEST_PROJECT_DATA"
+    }
+}
+
+export const receiveProjectData = (projectData) => {
+    return {
+        type: "RECEIVE_PROJECT_DATA",
+        data: projectData
+    }
+}
+export const fetchProjectIndex = () => {
+    return dispatch => { 
+        dispatch(requestProjectData())
+       return fetch('http://localhost:8000/api/projects')
+       .then(resp => resp.json())
+       .then(data => {
+           dispatch(receiveProjectData(data))
+       })
+       .catch(error => console.log(error));
+    }
+}
+
 export const createProject = projectData => {
     return dispatch => {
         let data = new FormData();

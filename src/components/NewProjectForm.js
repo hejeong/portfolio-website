@@ -35,7 +35,7 @@ const NewProjectForm = ({projectForm, updateProjectForm, createProject}) => {
                 <label>Description: </label>
                 <input type="text" name="description" value={projectForm.description} onChange={handleInputChange}/>
                 <label>Content: </label>
-                <input type="textarea" name="content" value={projectForm.content} onChange={handleInputChange}/>
+                <textarea name="content" value={projectForm.content} onChange={handleInputChange}/>
                 <label>Thumbnail: </label>
                 <input type="file" onChange={handleFile} />
                 <input type="submit" value="submit" />              

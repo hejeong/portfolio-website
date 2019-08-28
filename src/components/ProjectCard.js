@@ -1,10 +1,10 @@
 import React from 'react';
-import SinatraTextbooks from '../assets/sinatra-college-textbooks.png';
-const ProjectCard = () => {
+const ProjectCard = ({project}) => {
     return <div className="card">
-        <img src={ SinatraTextbooks } alt="college-textbooks-sinatra" className="img"/>
-        <div className="tags">
-            <p className="ruby-tag tag">Ruby</p>
+        <img src={ project.cover_image } alt="college-textbooks-sinatra" className="img"/>
+        <div className="card-text">
+            <h4 className="project-description roboto">{project.title}</h4>
+            <p className="thin-roboto">{project.description}</p>
         </div>
     </div>
 }
