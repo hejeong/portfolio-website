@@ -16,6 +16,12 @@
   background-size: cover;
   height: 100vh;
 }
+
+#blog-container {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.356), rgba(0, 0, 0, 0.356) ), url("https://www.wallpapermaiden.com/wallpaper/15425/download/2880x1800/coffee-notebook-glasses-top-view-drinks.jpg");
+  background-size: cover;
+  height: 100vh;
+}
 #header-content{
   text-align: center;
   padding-top: 35vh;
@@ -313,7 +319,7 @@
 }
 .profile-text {
   float: left;
-  width: 30vw;
+  width: 20vw;
   margin-right: 7vw;
 }
 .profile-pic {
@@ -355,23 +361,71 @@
   background: rgb(123, 233, 123);
   border: none;
 }
-.blog-title {
- width: 30%;
- height:  50px;
- margin: 0 20%;
- margin-top: 15px;
+
+.blog-wrapper {
+  float: left;
+  width: 40%;
+  height: 80%;
+  background-color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 70px;
+  padding-left: 40px;
+  margin-left: 5%;
+}
+.blog-card-title {
  font-size: 25px;
- padding: 15px;
+ margin: 0px;
+ color: rgb(32, 76, 141);
 }
 
-.blog-description {
-  width: 60%;
-  height: 40px;
-  margin: 30px 20%;
+.blog-card-description {
   font-size: 20px;
-  padding: 15px;
+  margin: 0px;
+  color: rgb(62, 97, 163);
 }
 
+.blog-title {
+  width: 30%;
+  height:  50px;
+  margin: 0 20%;
+  margin-top: 15px;
+  font-size: 25px;
+  padding: 15px;
+ }
+ 
+ .blog-description {
+   width: 60%;
+   height: 40px;
+   margin: 30px 20%;
+   font-size: 20px;
+   padding: 15px;
+ }
+.blog-list-item {
+  list-style: none;
+  width: 100%;
+}
+.blog-list-link {
+  text-decoration: none;
+}
+
+.blog-name-wrapper {
+  margin-right: 12%;
+  padding-top: 16%;
+  float: right;
+}
+
+.blog-name {
+  color: white;
+  font-size: 60px;
+}
+.line-break{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.recent {
+  color: rgb(39, 41, 59);
+}
 .markdown {
   margin: 0 auto;
   width: 60%;
@@ -383,7 +437,7 @@
 }
 
 #navbar {
-  color: rgb(243, 218, 107);
+  color: rgb(241, 203, 30);
   height: 100px;
   padding-top: 40px;
   padding-left: 60px;

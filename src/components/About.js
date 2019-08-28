@@ -2,7 +2,13 @@ import React from 'react';
 import MyImage from '../assets/me.jpg';
 const About = () => {
     return <div id="about">
-        <header className="navbar"><a href="/" className="navlink">Home</a></header>
+         <div id="navbar" className="thin-roboto">
+                <h1>Jonathan Hong</h1>
+                <a href='/'>Home</a>
+                <a href="/projects">Projects</a>
+                <a href="/blogs">Blogs</a>
+                <a href="/about">About</a>
+        </div>
         <div id="about-info">
             <img src={ MyImage } alt="Jonathan Hong" className="profile-pic"/>
             <div className="profile-text">
