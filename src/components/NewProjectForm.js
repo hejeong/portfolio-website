@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { updateProjectForm, createProject } from '../actions/project.js';
-import ActiveStorageProvider from 'react-activestorage-provider'
 
 const NewProjectForm = ({projectForm, updateProjectForm, createProject}) => {
   

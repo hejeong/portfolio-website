@@ -479,7 +479,21 @@
   background: rgb(53, 107, 53);
 }
 
+.project-wrapper {
+  background-color: rgb(173, 169, 169);
+  height: 100vh;
+  overflow-y: scroll;
+}
 
+.project-img-show {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.background-dark {
+  background-color: rgb(24, 22, 22);
+}
 body {
  
   margin: 0px;

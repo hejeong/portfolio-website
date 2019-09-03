@@ -5,6 +5,12 @@ export const updateProjectForm = formData => {
     }
 }
 
+export const getSpecificProject = (projectID) => {
+    return {
+        type: "GET_SPECIFIC_PROJECT",
+        projectID
+    }
+}
 
 export const requestProjectData = () => {
     return {

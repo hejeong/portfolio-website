@@ -12,7 +12,7 @@ class BlogPost extends Component {
         this.props.resetTargetBlog()
     }
     render(){
-        if(this.props.postData == ""){
+        if(this.props.postData === ""){
             return <div>
                 Loading...
             </div>

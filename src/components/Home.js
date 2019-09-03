@@ -1,7 +1,6 @@
 import React from 'react';
 import SinatraTextbooks from '../assets/sinatra-college-textbooks.png';
 import RunnersWeekly from '../assets/runners-weekly.png';
-import Bento from '../assets/bento.jpg';
 const Home = () => {
     return  <div>
         <section id="home-header">

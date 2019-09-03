@@ -16,7 +16,7 @@ export default (state=initialState, action) => {
         return Object.assign({}, state, { ...action.formData})
     case "GET_SPECIFIC_BLOG":
         const found = state.blogs.find(function(post){
-            return post.id == action.postID
+            return post.id === action.postID
         })
         console.log(found)
         return Object.assign({}, state, {target: found})

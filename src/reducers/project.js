@@ -3,7 +3,8 @@ const initialState = {
     description: "",
     content: "",
     cover_image: null,
-    projects: []
+    projects: [],
+    target: ""  
 }
 
 export default (state=initialState, action) => {
@@ -14,6 +15,12 @@ export default (state=initialState, action) => {
         return Object.assign({}, state, { projects: action.data.projects})
     case "UPDATE_PROJECT_FORM":
         return action.formData
+    case "GET_SPECIFIC_PROJECT":
+        const found = state.projects.find(function(project){
+            return project.id == action.projectID
+        })
+        console.log(found)
+        return Object.assign({}, state, {target: found})
     case "RESET_FORM":
         return Object.assign({}, state, initialState)
     default:
