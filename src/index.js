@@ -4,15 +4,18 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import projectsReducer from './reducers/project';
 import blogPostsReducer from './reducers/blog';
+import adminLoginReducer from './reducers/adminLogin';
 import { BrowserRouter as Router} from 'react-router-dom';
 import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const reducers = combineReducers({
     projectsReducer,
-    blogPostsReducer
+    blogPostsReducer,
+    adminLoginReducer
 })
 
 const store = createStore(reducers, composeEnhancer(applyMiddleware(thunk)));
