@@ -494,8 +494,21 @@
 .background-dark {
   background-color: rgb(24, 22, 22);
 }
+
+.center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.large-text {
+  font-size: 60px;
+}
+
+.grey {
+  color: rgb(71, 83, 114);
+}
 body {
- 
+  overflow-y: none;
   margin: 0px;
 }
 

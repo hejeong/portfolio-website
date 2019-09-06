@@ -21,6 +21,8 @@ export default (state=initialState, action) => {
         })
         console.log(found)
         return Object.assign({}, state, {target: found})
+    case "RESET_TARGET_PROJECT":
+        return Object.assign({}, state, {target: ""})
     case "RESET_FORM":
         return Object.assign({}, state, initialState)
     default:

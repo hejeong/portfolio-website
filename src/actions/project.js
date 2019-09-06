@@ -12,6 +12,12 @@ export const getSpecificProject = (projectID) => {
     }
 }
 
+export const resetTargetProject = () => {
+    return {
+        type: "RESET_TARGET_PROJECT"
+    }
+}
+
 export const requestProjectData = () => {
     return {
         type: "REQUEST_PROJECT_DATA"

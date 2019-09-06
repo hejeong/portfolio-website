@@ -6,20 +6,30 @@ import ReactMarkdown from 'react-markdown';
 class BlogPost extends Component {
     componentDidMount(){
         this.props.getSpecificBlog(this.props.match.params.id)
-        console.log(this.props.postData)
     }
     componentWillUnmount(){
         this.props.resetTargetBlog()
     }
     render(){
-        if(this.props.postData === ""){
+        if(!this.props.postData){
             return <div>
                 Loading...
             </div>
         }
-        return(<div className="markdown-html">
-            <ReactMarkdown source={this.props.postData.markdown} className="markdown-html thin-roboto"/>
-        </div>)
+        return(
+            <div>
+                <div id="navbar" className="thin-roboto background-dark">
+                    <h1>Jonathan Hong</h1>
+                    <a href='/'>Home</a>
+                    <a href="/projects">Projects</a>
+                    <a href="/blogs">Blogs</a>
+                    <a href="/about">About</a>
+                </div>
+                <div className="markdown-html">
+                    <ReactMarkdown source={this.props.postData.markdown} className="markdown-html thin-roboto"/>
+                </div>
+            </div>
+        )
     }
 }
 
