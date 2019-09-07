@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import About from './components/About';
+import AdminLogin from './components/AdminLogin';
 import NewProjectForm from './components/NewProjectForm';
 import NewBlogPostForm from './components/NewBlogPostForm';
 import BlogsContainer from './containers/BlogsContainer';
@@ -29,6 +30,7 @@ class App extends Component {
           <Route exact path='/projects/:id' component={Project} />
           <Route exact path='/projects' component={ ProjectsContainer } />
           <Route exact path='/about' component={ About } />
+          <Route exact path='/admin' component={ AdminLogin } />
         </Switch>
       </div>
     );

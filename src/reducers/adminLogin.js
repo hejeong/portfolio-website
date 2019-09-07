@@ -5,8 +5,10 @@ const initialState=({
 
 export default (state = initialState, action) => {
     switch(action.type){
-        case "":
-            return state;
+        case "UPDATE_ADMIN_LOGIN_FORM":
+            return Object.assign({}, state, {...action.loginData});
+        case "RESET_FORM":
+            return Object.assign({}, state, initialState)
         default:
             return state;
     }
