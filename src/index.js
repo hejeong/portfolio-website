@@ -4,7 +4,8 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import projectsReducer from './reducers/project';
 import blogPostsReducer from './reducers/blog';
-import adminLoginReducer from './reducers/adminLogin';
+import adminReducer from './reducers/adminLogin';
+import usersReducer from './reducers/user';
 import { BrowserRouter as Router} from 'react-router-dom';
 import thunk from 'redux-thunk';
 import './index.css';
@@ -15,7 +16,8 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const reducers = combineReducers({
     projectsReducer,
     blogPostsReducer,
-    adminLoginReducer
+    adminReducer,
+    usersReducer
 })
 
 const store = createStore(reducers, composeEnhancer(applyMiddleware(thunk)));

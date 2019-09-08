@@ -3,9 +3,16 @@ import SimpleMDE from 'simplemde/dist/simplemde.min.js'
 import 'simplemde/dist/simplemde.min.css'
 import { updateBlogPostForm, publishPost } from '../actions/blog.js';
 import { connect } from 'react-redux';
+import { checkToken } from '../actions/adminLogin';
+import { Redirect } from 'react-router';
+
 class NewBlogPostForm extends Component {
 
     componentDidMount(){
+        const jwtToken = localStorage.getItem('token');
+        if(!!jwtToken) {
+            this.props.checkToken(jwtToken)
+        }
         const simplemde = new SimpleMDE({ element: document.getElementById("blog-creator")})
         simplemde.codemirror.on('change', () => {
             const updateFormData = {
@@ -31,6 +38,9 @@ class NewBlogPostForm extends Component {
     }
 
     render(){
+        if(!this.props.loggedIn){
+            return <Redirect to='/' />
+        }
         return(
         <form className="blog-form" onSubmit={this.handleOnSubmit}>
             <h1 className="new-blog-label">Create new Blog Post</h1>
@@ -47,6 +57,7 @@ class NewBlogPostForm extends Component {
 const mapStateToProps = (state) => {
     return { 
         blogPostForm: state.blogPostsReducer,
+        loggedIn: state.usersReducer.username
     }
 }
-export default connect(mapStateToProps, {updateBlogPostForm, publishPost})(NewBlogPostForm);
+export default connect(mapStateToProps, {checkToken, updateBlogPostForm, publishPost})(NewBlogPostForm);

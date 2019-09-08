@@ -1,38 +1,50 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
-import { updateAdminLoginForm, login } from '../actions/adminLogin';
+import { updateAdminLoginForm, login, checkToken } from '../actions/adminLogin';
 
-const AdminLogin = ({login, loginForm, updateAdminLoginForm}) => {
+class AdminLogin extends Component{ 
 
-    const handleInputChange = (event) => {
+    componentDidMount(){
+        const jwtToken = localStorage.getItem('token');
+        if(!!jwtToken) {
+            this.props.checkToken(jwtToken)
+        }
+    }
+    handleInputChange = (event) => {
         const {name, value} = event.target
         const updateFormData = {
-            ...loginForm,
+            ...this.props.loginForm,
             [name]: value
         }
-        updateAdminLoginForm(updateFormData)
+        this.props.updateAdminLoginForm(updateFormData)
     }
 
-    const handleSubmit = event => {
+    handleSubmit = event => {
         event.preventDefault()
-        login({...loginForm})
+        this.props.login({...this.props.loginForm})
     }
-
-    return <div>
-        <form onSubmit={handleSubmit}>
-            <label for="username" >Username:</label>
-            <input type="text" name="username" onChange={handleInputChange}/>
-            <label for="username" >Password:</label>
-            <input type="password" name="password" onChange={handleInputChange}/>
+    
+    render(){
+        if(!!this.props.loggedIn){
+            return <Redirect to='/'/>
+        }
+        return <div>
+        <form onSubmit={this.handleSubmit}>
+            <label >Username:</label>
+            <input type="text" name="username" onChange={this.handleInputChange}/>
+            <label >Password:</label>
+            <input type="password" name="password" onChange={this.handleInputChange}/>
             <input type="submit" value="Login"/>
         </form>
     </div>
+    }
 }
-
 const mapStateToProps = (state) => {
     return {
-        loginForm: state.adminLoginReducer
+        loginForm: state.adminReducer,
+        loggedIn: state.usersReducer.username
     } 
 }
 
-export default connect(mapStateToProps, {login, updateAdminLoginForm} )(AdminLogin);
+export default connect(mapStateToProps, {login, updateAdminLoginForm, checkToken} )(AdminLogin);

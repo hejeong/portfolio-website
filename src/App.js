@@ -6,6 +6,7 @@ import NewBlogPostForm from './components/NewBlogPostForm';
 import BlogsContainer from './containers/BlogsContainer';
 import Project from './components/Project';
 import ProjectsContainer from './containers/ProjectsContainer';
+import AdminLogout from './components/AdminLogout';
 import BlogPost from './components/BlogPost';
 import {fetchBlogData} from './actions/blog';
 import {fetchProjectIndex} from './actions/project';
@@ -31,6 +32,7 @@ class App extends Component {
           <Route exact path='/projects' component={ ProjectsContainer } />
           <Route exact path='/about' component={ About } />
           <Route exact path='/admin' component={ AdminLogin } />
+          <Route exact path='/logout' component={ AdminLogout } />
         </Switch>
       </div>
     );

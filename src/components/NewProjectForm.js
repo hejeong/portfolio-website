@@ -1,52 +1,66 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { updateProjectForm, createProject } from '../actions/project.js';
+import { checkToken } from '../actions/adminLogin';
+import { Redirect } from 'react-router';
 
-const NewProjectForm = ({projectForm, updateProjectForm, createProject}) => {
-  
-    const handleInputChange = (event) => {
+class NewProjectForm extends Component{
+    componentDidMount(){
+        const jwtToken = localStorage.getItem('token');
+        if(!!jwtToken) {
+            this.props.checkToken(jwtToken)
+        }
+    }
+    handleInputChange = (event) => {
         const {name, value} = event.target
         const updateFormData = {
-            ...projectForm,
+            ...this.props.projectForm,
             [name]: value
         }
         updateProjectForm(updateFormData)
     }
 
-    const handleFile = event => {
+    handleFile = event => {
         const file = event.target.files[0]
         const updateFormData = {
-            ...projectForm,
+            ...this.props.projectForm,
             cover_image: file
         }
-        updateProjectForm(updateFormData)
+        this.props.updateProjectForm(updateFormData)
     }
-    const handleSubmit = event => {
+    handleSubmit = event => {
         event.preventDefault()
-        createProject({...projectForm})
+        this.props.createProject({...this.props.projectForm})
     }
 
-    return(<div>
-            <form onSubmit={handleSubmit}>
-                <h4>Add a new project</h4>
-                <label>Title: </label>
-                <input type="text" name="title" value={projectForm.title} onChange={handleInputChange}/>
-                <label>Description: </label>
-                <input type="text" name="description" value={projectForm.description} onChange={handleInputChange}/>
-                <label>Content: </label>
-                <textarea name="content" value={projectForm.content} onChange={handleInputChange}/>
-                <label>Thumbnail: </label>
-                <input type="file" onChange={handleFile} />
-                <input type="submit" value="submit" />              
-            </form>
-    </div>)
-     
+    render(){
+        if(!this.props.loggedIn){
+            return <Redirect to='/'/>
+        }
+        return(<div>
+                <form onSubmit={this.props.handleSubmit}>
+                    <h4>Add a new project</h4>
+                    <label>Title: </label>
+                    <input type="text" name="title" value={this.props.projectForm.title} onChange={this.props.handleInputChange}/>
+                    <label>Description: </label>
+                    <input type="text" name="description" value={this.props.projectForm.description} onChange={this.props.handleInputChange}/>
+                    <label>Content: </label>
+                    <textarea name="content" value={this.props.projectForm.content} onChange={this.props.handleInputChange}/>
+                    <label>Thumbnail: </label>
+                    <input type="file" onChange={this.props.handleFile} />
+                    <input type="submit" value="submit" />              
+                </form>
+        </div>)
+    }
+    
 }
 
 const mapStateToProps = (state) => {
     return { 
         projectForm: state.projectsReducer,
+        loggedIn: state.usersReducer.username
+
     }
 }
 
-export default connect(mapStateToProps, {updateProjectForm, createProject})(NewProjectForm);
+export default connect(mapStateToProps, {checkToken, updateProjectForm, createProject})(NewProjectForm);

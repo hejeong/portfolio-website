@@ -507,6 +507,10 @@
 .grey {
   color: rgb(71, 83, 114);
 }
+
+.logout-link{
+  color: rgb(155, 42, 42)(59, 22, 22);
+}
 body {
   overflow-y: none;
   margin: 0px;
