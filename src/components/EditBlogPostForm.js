@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import SimpleMDE from 'simplemde/dist/simplemde.min.js'
 import 'simplemde/dist/simplemde.min.css'
-import { updateBlogPostForm, publishPost } from '../actions/blog.js';
+import { updateBlogPostForm, submitPostEdit, deletePost } from '../actions/blog.js';
 import { connect } from 'react-redux';
 import { checkToken } from '../actions/adminLogin';
 import { Redirect } from 'react-router';
@@ -14,12 +14,19 @@ class NewBlogPostForm extends Component {
             redirect: false
         }
     }
+
     componentDidMount(){
         const jwtToken = localStorage.getItem('token');
         if(!!jwtToken) {
             this.props.checkToken(jwtToken)
         }
+        const initialFormData = {
+            title: this.props.postData.title,
+            description: this.props.postData.description
+        }
+        this.props.updateBlogPostForm(initialFormData);
         const simplemde = new SimpleMDE({ element: document.getElementById("blog-creator")})
+        simplemde.value(this.props.postData.markdown);
         simplemde.codemirror.on('change', () => {
             const updateFormData = {
                 ...this.props.blogPostForm,
@@ -27,10 +34,6 @@ class NewBlogPostForm extends Component {
             }
             this.props.updateBlogPostForm(updateFormData)
           })
-    }
-
-    setRedirect = () => {
-        this.setState({redirect: true})
     }
 
     handleInputChange = (event) => {
@@ -44,7 +47,14 @@ class NewBlogPostForm extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault();
-        this.props.publishPost(this.props.blogPostForm, this.setRedirect)
+        this.props.submitPostEdit(this.props.blogPostForm, this.props.match.params.id)
+    }
+    setRedirect = () => {
+        this.setState({redirect: true})
+    }
+
+    handleOnClickDelete=(event) => {
+        this.props.deletePost(this.props.match.params.id, this.setRedirect);
     }
 
     render(){
@@ -57,12 +67,13 @@ class NewBlogPostForm extends Component {
         return(
         <form className="blog-form" onSubmit={this.handleOnSubmit}>
             <h1 className="new-blog-label">Create new Blog Post</h1>
-            <input type="text" name="title" placeholder="Title" className="blog-title roboto" onChange={this.handleInputChange}/> <br/>
-            <input type="text" name="description" placeholder="Description" className="blog-description thin-roboto" onChange={this.handleInputChange} />
+            <input type="text" name="title" placeholder="Title" className="blog-title roboto" value={this.props.blogPostForm.title} onChange={this.handleInputChange}/> <br/>
+            <input type="text" name="description" placeholder="Description" className="blog-description thin-roboto" value={this.props.blogPostForm.description} onChange={this.handleInputChange} />
             <div className="markdown">
                 <textarea id="blog-creator" />
             </div>
-            <input type="submit" value="Publish" className="new-blog-submit thin-roboto"/>
+            <button onClick={this.handleOnClickDelete}>Delete</button>
+            <input type="submit" value="Update" className="new-blog-submit thin-roboto"/>
         </form>)
     }
     
@@ -70,7 +81,8 @@ class NewBlogPostForm extends Component {
 const mapStateToProps = (state) => {
     return { 
         blogPostForm: state.blogPostsReducer,
-        loggedIn: state.usersReducer.username
+        postData: state.blogPostsReducer.target,
+        loggedIn: state.usersReducer.username,
     }
 }
-export default connect(mapStateToProps, {checkToken, updateBlogPostForm, publishPost})(NewBlogPostForm);
+export default connect(mapStateToProps, {checkToken, updateBlogPostForm, submitPostEdit, deletePost})(NewBlogPostForm);

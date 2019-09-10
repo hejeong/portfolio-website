@@ -89,8 +89,8 @@ class Home extends Component{
                             
                             </div>
                         </section>
-                        <section id="home-food">
-                        </section>
+                        {/*<section id="home-food">
+                        </section>*/}
                         <section id="footer">
                             Contact
                         </section>

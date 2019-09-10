@@ -43,7 +43,7 @@ export const fetchBlogData = () => {
     }
 }
 
-export const publishPost = postData => {
+export const publishPost = (postData, updateToRedirect) => {
     return dispatch => {
         let data = new FormData();
         data.append('blog[title]', postData.title)
@@ -60,8 +60,56 @@ export const publishPost = postData => {
                 alert(data.errors)
             }else {
                 //success
+                console.log(data.blog)
+                dispatch({type: "RESET_FORM"});
+                dispatch({type: "ADD_NEW_BLOG", blog: data.blog});
+                updateToRedirect();
+            }
+        });
+    }
+}
+
+export const submitPostEdit = (postData, postID)=> {
+    return dispatch => {
+        let data = new FormData();
+        data.append('blog[title]', postData.title)
+        data.append('blog[description]', postData.description)
+        data.append('blog[markdown]', postData.markdown)
+        return fetch(`http://localhost:8000/api/blogs/${postID}`, {
+            method: 'PATCH',
+            body: data
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.errors){
+                //error
+                alert(data.errors)
+            }else {
+                //success
                 dispatch({type: "RESET_FORM"});
             }
         });
     }
+}
+
+export const deletePost = (postID, updateToRedirect) => {
+    return dispatch => {
+        return fetch(`http://localhost:8000/api/blogs/${postID}`, {
+            method: 'DELETE'
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.errors){
+                //error
+                alert(data.errors)
+            }else {
+                //success
+                dispatch({type: "RESET_TARGET"});
+                dispatch({type: "RESET_FORM"});
+                dispatch({type: "DELETE_POST_BY_ID", postID})
+                updateToRedirect();
+            }
+        });
+    }
+
 }

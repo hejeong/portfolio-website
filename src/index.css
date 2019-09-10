@@ -401,6 +401,15 @@
    font-size: 20px;
    padding: 15px;
  }
+ .blog-list {
+   overflow-y: scroll;
+   height: 80%;
+ }
+ /* Hide scrollbar but allow scroll */
+ .blog-list::-webkit-scrollbar { width: 0 !important }
+ .blog-list { overflow: -moz-scrollbars-none; }
+ .blog-list { -ms-overflow-style: none; }
+
 .blog-list-item {
   list-style: none;
   width: 100%;
