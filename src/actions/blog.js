@@ -34,7 +34,7 @@ export const resetTargetBlog= () => {
 export const fetchBlogData = () => {
     return dispatch => { 
         dispatch(requestBlogData())
-       return fetch('http://jonhong.me/api/blogs')
+       return fetch('https://jonhong-website-api.herokuapp.com/api/blogs')
        .then(resp => resp.json())
        .then(data => {
            dispatch(receiveBlogData(data))
@@ -49,7 +49,7 @@ export const publishPost = (postData, updateToRedirect) => {
         data.append('blog[title]', postData.title)
         data.append('blog[description]', postData.description)
         data.append('blog[markdown]', postData.markdown)
-        return fetch(`http://jonhong.me/api/blogs/`, {
+        return fetch(`https://jonhong-website-api.herokuapp.com/api/blogs/`, {
             method: 'POST',
             body: data
         })
@@ -75,7 +75,7 @@ export const submitPostEdit = (postData, postID)=> {
         data.append('blog[title]', postData.title)
         data.append('blog[description]', postData.description)
         data.append('blog[markdown]', postData.markdown)
-        return fetch(`http://jonhong.me/api/blogs/${postID}`, {
+        return fetch(`https://jonhong-website-api.herokuapp.com/api/blogs/${postID}`, {
             method: 'PATCH',
             body: data
         })
@@ -94,7 +94,7 @@ export const submitPostEdit = (postData, postID)=> {
 
 export const deletePost = (postID, updateToRedirect) => {
     return dispatch => {
-        return fetch(`http://jonhong.me/api/blogs/${postID}`, {
+        return fetch(`https://jonhong-website-api.herokuapp.com/api/blogs/${postID}`, {
             method: 'DELETE'
         })
         .then(response => response.json())

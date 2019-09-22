@@ -10,7 +10,7 @@ export const login = loginData => {
         let data = new FormData();
         data.append('admin[username]', loginData.username);
         data.append('admin[password]', loginData.password);
-        return fetch(`http://jonhong.me/auth/admin/login`, {
+        return fetch(`https://jonhong-website-api.herokuapp.com/auth/admin/login`, {
             method: 'POST',
             body: data
         })
@@ -35,7 +35,7 @@ export const checkToken = token => {
     return dispatch => {
         let data = new FormData();
         data.append('token', token);
-        return fetch('http://jonhong.me/auth/admin/jwt/token', {
+        return fetch('https://jonhong-website-api.herokuapp.com/auth/admin/jwt/token', {
             method: 'POST',
             body: data
         })

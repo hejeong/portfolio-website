@@ -33,7 +33,7 @@ export const receiveProjectData = (projectData) => {
 export const fetchProjectIndex = () => {
     return dispatch => { 
         dispatch(requestProjectData())
-       return fetch('http://jonhong.me/api/projects')
+       return fetch('https://jonhong-website-api.herokuapp.com/api/projects')
        .then(resp => resp.json())
        .then(data => {
            dispatch(receiveProjectData(data))
@@ -49,7 +49,7 @@ export const createProject = projectData => {
         data.append('project[title]', projectData.title)
         data.append('project[description]', projectData.description)
         data.append('project[content]', projectData.content)
-        return fetch(`http://jonhong.me/api/projects/`, {
+        return fetch(`https://jonhong-website-api.herokuapp.com/api/projects/`, {
             method: 'POST',
             body: data
         })
