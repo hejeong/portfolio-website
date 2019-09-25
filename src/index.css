@@ -496,7 +496,7 @@
 
 .project-img-show {
   display: block;
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -519,6 +519,29 @@
 
 .logout-link{
   color: rgb(155, 42, 42)(59, 22, 22);
+}
+
+.github {
+  background-image: url('./assets/GitHub-Mark-Light-32px.png');
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+}
+
+.block {
+  display: block;
+}
+
+.project-show-content{
+  background: rgb(212, 212, 212);
+  padding: 10px 0px;
+  width: 60%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.padding-10 {
+  padding: 10px;
 }
 body {
   overflow-y: none;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getSpecificProject, resetTargetProject } from '../actions/project.js';
-
+import GithubIcon from '../assets/GitHub-Mark-Light-32px.png'; 
 class Project extends Component {
 
     componentDidMount(){
@@ -23,7 +23,9 @@ class Project extends Component {
             <div>
                 <h1 className="project-title large-text center grey">{this.props.project.title}</h1> <br/>
                 <img src={ this.props.project.cover_image } alt="college-textbooks-sinatra" className="project-img-show"/>
-                <p className="center">{this.props.project.content}</p>
+                <p className="project-show-content center roboto">{this.props.project.content}</p>
+                <h2 className="roboto center padding-10">Walkthrough:</h2>
+                <iframe className="project-walkthrough block center"  width="1120" height="630" src={this.props.project.walkthrough} title={this.props.project.title} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
             </div>
         </div>)
     }

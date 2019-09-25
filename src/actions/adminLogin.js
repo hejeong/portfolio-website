@@ -22,7 +22,6 @@ export const login = loginData => {
             }else {
                 //success
                 localStorage.setItem('token', data.jwt);
-                console.log(data.user.username);
                 dispatch({type: "SET_CURRENT_USERNAME", username: data.user.username})
                 dispatch({type: "RESET_FORM"});
             }
@@ -44,7 +43,6 @@ export const checkToken = token => {
             if(data.errors){
                 alert("Please Log In")
             }else{
-                console.log(data)
                 dispatch({type: "SET_CURRENT_USERNAME", username: data.user.username})
             }
         })

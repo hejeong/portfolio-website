@@ -16,7 +16,9 @@ class NewBlogPostForm extends Component {
     }
     componentDidMount(){
         const jwtToken = localStorage.getItem('token');
+        console.log(jwtToken)
         if(!!jwtToken) {
+            
             this.props.checkToken(jwtToken)
         }
         const simplemde = new SimpleMDE({ element: document.getElementById("blog-creator")})
