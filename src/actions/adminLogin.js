@@ -41,7 +41,7 @@ export const checkToken = token => {
         .then(response => response.json())
         .then(data => {
             if(data.errors){
-                alert("Please Log In")
+               
             }else{
                 dispatch({type: "SET_CURRENT_USERNAME", username: data.user.username})
             }
