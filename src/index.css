@@ -552,3 +552,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@media screen and (max-width: 800px) {
+  #navbar > .new-project-button {
+    color: white;
+    padding: 10px 20px;
+    margin-left: 20%;
+    background: rgb(80, 145, 80);
+    font-size: 20px;
+    transition: all 0.3s ease-in-out 0s;
+  }
+}
