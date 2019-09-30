@@ -11,10 +11,10 @@ class EditProjectForm extends Component{
             this.props.checkToken(jwtToken)
         }*/
         const initialFormData = {
-            title: this.props.projectForm.title,
-            description: this.props.projectForm.description,
-            content: this.props.projectForm.content,
-            walkthrough: this.props.projectForm.walkthrough
+            title: this.props.projectData.title,
+            description: this.props.projectData.description,
+            content: this.props.projectData.content,
+            walkthrough: this.props.projectData.walkthrough
         }
         this.props.updateProjectForm(initialFormData)
     }
@@ -74,6 +74,7 @@ class EditProjectForm extends Component{
 const mapStateToProps = (state) => {
     return { 
         projectForm: state.projectsReducer,
+        projectData: state.projectsReducer.target,
         loggedIn: state.usersReducer.username
 
     }

@@ -66,7 +66,7 @@ class EditBlogPostForm extends Component {
         }
         return(
         <form className="blog-form" onSubmit={this.handleOnSubmit}>
-            <h1 className="new-blog-label">Create new Blog Post</h1>
+            <h1 className="new-blog-label">Edit Blog Post</h1>
             <input type="text" name="title" placeholder="Title" className="blog-title roboto" value={this.props.blogPostForm.title} onChange={this.handleInputChange}/> <br/>
             <input type="text" name="description" placeholder="Description" className="blog-description thin-roboto" value={this.props.blogPostForm.description} onChange={this.handleInputChange} />
             <div className="markdown">
