@@ -12,7 +12,7 @@ class ProjectsContainer extends Component {
         }*/
     }
     render(){
-        if(localStorage.getItem('jon-username')){
+        if(localStorage.getItem('jon-username') == 'hejeong'){
             return <div id="projects-container">
                         <div id="navbar" className="thin-roboto">
                             <h1>Jonathan Hong</h1>
