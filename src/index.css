@@ -553,7 +553,7 @@ code {
     monospace;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1350px) {
   #navbar > .new-project-button {
     color: white;
     padding: 10px 20px;
