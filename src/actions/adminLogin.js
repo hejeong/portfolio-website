@@ -46,6 +46,6 @@ export const checkToken = token => {
                 dispatch({type: "SET_CURRENT_USERNAME", username: data.user.username})
             }
         })
-        .catch(error=>console.log(error))
+        .catch(error=>console.log(error));
     }
 }
