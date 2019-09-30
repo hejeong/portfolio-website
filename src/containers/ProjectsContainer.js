@@ -12,7 +12,7 @@ class ProjectsContainer extends Component {
         }*/
     }
     render(){
-        if(!this.props.loggedIn){
+        if(localStorage.getItem('jon-username')){
             return <div id="projects-container">
                         <div id="navbar" className="thin-roboto">
                             <h1>Jonathan Hong</h1>

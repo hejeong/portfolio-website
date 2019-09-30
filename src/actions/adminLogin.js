@@ -22,6 +22,7 @@ export const login = loginData => {
             }else {
                 //success
                 localStorage.setItem('token', data.jwt);
+                localStorage.setItem('jon-username', data.user.username)
                 dispatch({type: "SET_CURRENT_USERNAME", username: data.user.username})
                 dispatch({type: "RESET_FORM"});
             }
