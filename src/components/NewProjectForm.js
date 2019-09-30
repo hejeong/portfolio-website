@@ -34,7 +34,7 @@ class NewProjectForm extends Component{
     }
 
     render(){
-        if(!this.props.loggedIn){
+        if(localStorage.getItem('jon-username') != 'hejeong'){
             return <Redirect to='/'/>
         }
         return(<div>
