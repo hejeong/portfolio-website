@@ -40,7 +40,7 @@ class BlogsContainer extends Component {
                             <a href="/projects">Projects</a>
                             <a href="/blogs">Blogs</a>
                             <a href="/about">About</a>
-                            <NavLink to="/blog/new" className="new-project-button" >+ Create a Post</NavLink>
+                            <NavLink to="/blogs/new" className="new-project-button" >+ Create a Post</NavLink>
                     </div>
             
                     <div className="blog-wrapper">

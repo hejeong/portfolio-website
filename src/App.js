@@ -26,9 +26,9 @@ class App extends Component {
       <div className="App">
         <Switch >
           <Route exact path='/' component={ Home } />
-          <Route exact path='/blog/new' component={NewBlogPostForm} />
-          <Route exact path='/blog/:id/edit' component={EditBlogPostForm} />
-          <Route exact path='/blog/:id' component={ BlogPost } />
+          <Route exact path='/blogs/new' component={NewBlogPostForm} />
+          <Route exact path='/blogs/:id/edit' component={EditBlogPostForm} />
+          <Route exact path='/blogs/:id' component={ BlogPost } />
           <Route exact path="/blogs" component={BlogsContainer} />
           <Route exact path='/projects/new' component={ NewProjectForm } />
           <Route exact path='/projects/:id/edit' component={EditProjectForm} />

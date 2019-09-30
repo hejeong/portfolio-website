@@ -23,7 +23,7 @@ class BlogPost extends Component {
                     <a href="/projects">Projects</a>
                     <a href="/blogs">Blogs</a>
                     <a href="/about">About</a>
-                    <NavLink to={'/blog/' + this.props.match.params.id + '/edit'} className="new-project-button" >+ Edit</NavLink>
+                    <NavLink to={'/blogs/' + this.props.match.params.id + '/edit'} className="new-project-button" >+ Edit</NavLink>
                 </div>
                 <div className="markdown-html">
                     <ReactMarkdown source={this.props.postData.markdown} className="markdown-html thin-roboto"/>

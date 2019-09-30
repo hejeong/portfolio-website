@@ -4,7 +4,7 @@ import BlogPostCard from './BlogPostCard';
 const BlogList = ({posts}) => {
     return posts.map(post=>{
         return <li className="blog-list-item" key={post.id}>
-            <Link className="blog-list-link" to={'/blog/'+post.id}>
+            <Link className="blog-list-link" to={'/blogs/'+post.id}>
                 <BlogPostCard post={post} />
             </Link>
             <hr className="line-break" />
