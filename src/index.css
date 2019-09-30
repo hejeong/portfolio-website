@@ -580,4 +580,11 @@ code {
     height: 70vh;
     width: 70vw;
   }
+
+  .profile-title {
+    color: black;
+    font-size: 40px;
+    width: 50%;
+    margin-top: 0px;
+  }
 }
