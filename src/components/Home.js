@@ -11,7 +11,7 @@ class Home extends Component{
         }*/
     }
     render(){
-            if(!!this.props.loggedIn) {
+            if(localStorage.getItem('jon-username') != 'hejeong') {
                 return <div>
                     <section id="home-header">
                         <div id="header-content">
