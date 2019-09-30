@@ -7,10 +7,10 @@ import { checkToken } from '../actions/adminLogin';
 class BlogsContainer extends Component {
 
     componentDidMount(){
-        const jwtToken = localStorage.getItem('token');
+        /*const jwtToken = localStorage.getItem('token');
         if(!!jwtToken) {
             this.props.checkToken(jwtToken)
-        }
+        }*/
     }
     render(){
         if(!this.props.loggedIn){
