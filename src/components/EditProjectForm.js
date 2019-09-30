@@ -52,18 +52,18 @@ class EditProjectForm extends Component{
             return <Redirect to='/'/>
         }
         return(<div>
-                <form onSubmit={this.props.handleSubmit}>
+                <form onSubmit={this.handleSubmit}>
                     <h4>Add a new project</h4>
                     <label>Title: </label>
-                    <input type="text" name="title" value={this.props.projectForm.title} onChange={this.props.handleInputChange}/>
+                    <input type="text" name="title" value={this.props.projectForm.title} onChange={this.handleInputChange}/>
                     <label>Description: </label>
-                    <input type="text" name="description" value={this.props.projectForm.description} onChange={this.props.handleInputChange}/>
+                    <input type="text" name="description" value={this.props.projectForm.description} onChange={this.handleInputChange}/>
                     <label>Content: </label>
-                    <textarea name="content" value={this.props.projectForm.content} onChange={this.props.handleInputChange}/>
+                    <textarea name="content" value={this.props.projectForm.content} onChange={this.handleInputChange}/>
                     <label>Walkthrough: </label>
-                    <input type="text" name="walkthrough" value={this.props.projectForm.walkthrough} onChange={this.props.handleInputChange}/>
+                    <input type="text" name="walkthrough" value={this.props.projectForm.walkthrough} onChange={this.handleInputChange}/>
                     <label>Thumbnail: </label>
-                    <input type="file" onChange={this.props.handleFile} />
+                    <input type="file" onChange={this.handleFile} />
                     <input type="submit" value="submit" />              
                 </form>
         </div>)
