@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { checkToken } from '../actions/adminLogin';
 import { Redirect } from 'react-router';
 
-class NewBlogPostForm extends Component {
+class EditBlogPostForm extends Component {
 
     constructor(props){
         super(props)
@@ -85,4 +85,4 @@ const mapStateToProps = (state) => {
         loggedIn: state.usersReducer.username,
     }
 }
-export default connect(mapStateToProps, {checkToken, updateBlogPostForm, submitPostEdit, deletePost})(NewBlogPostForm);
+export default connect(mapStateToProps, {checkToken, updateBlogPostForm, submitPostEdit, deletePost})(EditBlogPostForm);

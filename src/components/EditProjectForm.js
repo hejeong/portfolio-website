@@ -13,7 +13,8 @@ class EditProjectForm extends Component{
         const initialFormData = {
             title: this.props.projectForm.title,
             description: this.props.projectForm.description,
-            content: this.props.projectForm.content
+            content: this.props.projectForm.content,
+            walkthrough: this.props.projectForm.walkthrough
         }
         this.props.updateProjectForm(initialFormData)
     }
@@ -36,7 +37,14 @@ class EditProjectForm extends Component{
     }
     handleSubmit = event => {
         event.preventDefault()
-        this.props.createProject({...this.props.projectForm})
+        this.props.submitProjectEdit(this.props.projectForm, this.props.match.params.id)
+    }
+    setRedirect = () => {
+        this.setState({redirect: true})
+    }
+
+    handleOnClickDelete=(event) => {
+        this.props.deleteProject(this.props.match.params.id, this.setRedirect);
     }
 
     render(){
@@ -52,6 +60,8 @@ class EditProjectForm extends Component{
                     <input type="text" name="description" value={this.props.projectForm.description} onChange={this.props.handleInputChange}/>
                     <label>Content: </label>
                     <textarea name="content" value={this.props.projectForm.content} onChange={this.props.handleInputChange}/>
+                    <label>Walkthrough: </label>
+                    <input type="text" name="walkthrough" value={this.props.projectForm.walkthrough} onChange={this.props.handleInputChange}/>
                     <label>Thumbnail: </label>
                     <input type="file" onChange={this.props.handleFile} />
                     <input type="submit" value="submit" />              
@@ -69,4 +79,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {checkToken, updateProjectForm, createProject})(EditProjectForm);
+export default connect(mapStateToProps, {checkToken, updateProjectForm, submitProjectEdit, deleteProject})(EditProjectForm);

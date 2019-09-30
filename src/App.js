@@ -9,6 +9,7 @@ import ProjectsContainer from './containers/ProjectsContainer';
 import AdminLogout from './components/AdminLogout';
 import BlogPost from './components/BlogPost';
 import EditBlogPostForm from './components/EditBlogPostForm';
+import EditProjectForm from './components/EditProjectForm';
 import {fetchBlogData} from './actions/blog';
 import {fetchProjectIndex} from './actions/project';
 import Home from './components/Home';
@@ -30,6 +31,7 @@ class App extends Component {
           <Route exact path='/blog/:id' component={ BlogPost } />
           <Route exact path="/blogs" component={BlogsContainer} />
           <Route exact path='/projects/new' component={ NewProjectForm } />
+          <Route exact path='/projects/:id/edit' component={EditProjectForm} />
           <Route exact path='/projects/:id' component={Project} />
           <Route exact path='/projects' component={ ProjectsContainer } />
           <Route exact path='/about' component={ About } />

@@ -13,6 +13,17 @@ export default (state=initialState, action) => {
         return state;
     case "RECEIVE_PROJECT_DATA":
         return Object.assign({}, state, { projects: action.data.projects})
+    case "DELETE_POST_BY_ID":
+        let index = -1;
+        state.projects.find(function(post, i) {
+            if(post.id == action.postID){
+                index = i;
+                return true;
+            }
+            return false;
+        })
+        state.projects.splice(index, 1);
+        return Object.assign({}, state, { projects: state.projects})    
     case "UPDATE_PROJECT_FORM":
         return action.formData
     case "GET_SPECIFIC_PROJECT":

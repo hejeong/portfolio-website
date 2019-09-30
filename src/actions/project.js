@@ -49,6 +49,7 @@ export const createProject = projectData => {
         data.append('project[title]', projectData.title)
         data.append('project[description]', projectData.description)
         data.append('project[content]', projectData.content)
+        data.append('project[walkthrough]', projectData.walkthrough)
         return fetch(`https://jonhong-website-api.herokuapp.com/api/projects/`, {
             method: 'POST',
             body: data
@@ -64,4 +65,51 @@ export const createProject = projectData => {
             }
         });
     }
+}
+
+
+export const submitProjectEdit = (postData, postID)=> {
+    return dispatch => {
+        let data = new FormData();
+        data.append('project[title]', postData.title)
+        data.append('project[description]', postData.description)
+        data.append('project[walkthrough]', postData.walkthrough)
+        data.append('project[content]', postData.content)
+        return fetch(`https://jonhong-website-api.herokuapp.com/api/projects/${postID}`, {
+            method: 'PATCH',
+            body: data
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.errors){
+                //error
+                alert(data.errors)
+            }else {
+                //success
+                dispatch({type: "RESET_FORM"});
+            }
+        });
+    }
+}
+
+export const deleteProject = (postID, updateToRedirect) => {
+    return dispatch => {
+        return fetch(`https://jonhong-website-api.herokuapp.com/api/projects/${postID}`, {
+            method: 'DELETE'
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.errors){
+                //error
+                alert(data.errors)
+            }else {
+                //success
+                dispatch({type: "RESET_TARGET_PROJECT"});
+                dispatch({type: "RESET_FORM"});
+                dispatch({type: "DELETE_POST_BY_ID", postID})
+                updateToRedirect();
+            }
+        });
+    }
+
 }
