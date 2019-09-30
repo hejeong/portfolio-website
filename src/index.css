@@ -577,5 +577,7 @@ code {
 
   .about-info{
     padding-left: 7vw;
+    height: 80vh;
+    width: 70vw;
   }
 }
