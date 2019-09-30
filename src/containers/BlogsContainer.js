@@ -13,7 +13,7 @@ class BlogsContainer extends Component {
         }*/
     }
     render(){
-        if(localStorage.getItem('jon-username') == 'hejeong'){
+        if(localStorage.getItem('jon-username') != 'hejeong'){
             return <div id="blog-container">
                     <div id="navbar" className="thin-roboto">
                         <h1>Jonathan Hong</h1>
