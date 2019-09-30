@@ -567,4 +567,15 @@ code {
     margin: 0px;
     margin-right: 15%;
   }
+  .profile-pic {
+    width: 270px;
+    height: 360px;
+    filter: contrast(0.8);
+    border-radius: 50%;
+    margin-right: 8vw;
+  }
+
+  .about-info{
+    padding-left: 7vw;
+  }
 }
