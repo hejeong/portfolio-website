@@ -6,10 +6,10 @@ import { Redirect } from 'react-router';
 
 class NewProjectForm extends Component{
     componentDidMount(){
-        const jwtToken = localStorage.getItem('token');
+        /*const jwtToken = localStorage.getItem('token');
         if(!!jwtToken) {
             this.props.checkToken(jwtToken)
-        }
+        }*/
     }
     handleInputChange = (event) => {
         const {name, value} = event.target

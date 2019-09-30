@@ -16,10 +16,10 @@ class NewBlogPostForm extends Component {
     }
 
     componentDidMount(){
-        const jwtToken = localStorage.getItem('token');
+        /*const jwtToken = localStorage.getItem('token');
         if(!!jwtToken) {
             this.props.checkToken(jwtToken)
-        }
+        }*/
         const initialFormData = {
             title: this.props.postData.title,
             description: this.props.postData.description

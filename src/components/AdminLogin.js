@@ -6,10 +6,10 @@ import { updateAdminLoginForm, login, checkToken } from '../actions/adminLogin';
 class AdminLogin extends Component{ 
 
     componentDidMount(){
-        const jwtToken = localStorage.getItem('token');
+        /*const jwtToken = localStorage.getItem('token');
         if(!!jwtToken) {
             this.props.checkToken(jwtToken)
-        }
+        }*/
     }
     handleInputChange = (event) => {
         const {name, value} = event.target

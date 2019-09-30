@@ -9,10 +9,10 @@ import { Redirect } from 'react-router';
 class EditBlogPost extends Component {
 
     componentDidMount(){
-        const jwtToken = localStorage.getItem('token');
+        /*const jwtToken = localStorage.getItem('token');
         if(!!jwtToken) {
             this.props.checkToken(jwtToken)
-        }
+        }*/
 
         blog_id = this.props.match.params.id
         
