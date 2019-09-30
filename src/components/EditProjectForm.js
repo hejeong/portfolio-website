@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { updateProjectForm, createProject } from '../actions/project.js';
+import { updateProjectForm, submitProjectEdit, deleteProject } from '../actions/project.js';
 import { checkToken } from '../actions/adminLogin';
 import { Redirect } from 'react-router';
 
