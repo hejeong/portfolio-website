@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getSpecificProject, resetTargetProject } from '../actions/project.js';
+import { NavLink } from 'react-router-dom';
 import GithubIcon from '../assets/GitHub-Mark-Light-32px.png'; 
 class Project extends Component {
 
