@@ -15,6 +15,20 @@ class BlogPost extends Component {
                 Loading...
             </div>
         }
+        if(localStorage.getItem('jon-username') != 'hejeong'){
+            return <div>
+                        <div id="navbar" className="thin-roboto background-dark">
+                            <h1>Jonathan Hong</h1>
+                            <a href='/'>Home</a>
+                            <a href="/projects">Projects</a>
+                            <a href="/blogs">Blogs</a>
+                            <a href="/about">About</a>
+                        </div>
+                        <div className="markdown-html">
+                            <ReactMarkdown source={this.props.postData.markdown} className="markdown-html thin-roboto"/>
+                        </div>
+                    </div>
+        }
         return(
             <div>
                 <div id="navbar" className="thin-roboto background-dark">
