@@ -18,7 +18,7 @@
 }
 
 #blog-container {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.356), rgba(0, 0, 0, 0.356) ), url("https://www.wallpapermaiden.com/wallpaper/15425/download/2880x1800/coffee-notebook-glasses-top-view-drinks.jpg");
+  background-image: linear-gradient( rgba(0, 0, 0, 0.356), rgba(0, 0, 0, 0.356) ), url("http://www.chbbaccountants.ca/wp-content/uploads/2016/08/slider1.jpg");
   background-size: cover;
   height: 100vh;
 }
@@ -592,7 +592,7 @@ code {
     width: 100vw;
   }
   .card {
-    margin: -20px;
+    margin: -40px;
     position: relative;
     float: left;
     transition: all 0.4s ease-in-out 0s;
